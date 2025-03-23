@@ -1,0 +1,29 @@
+services:
+  backend-server:
+    image: backend-image
+    build:
+      context: ./Back-End
+    volumes:
+      - ./Back-End:/app
+    
+    networks:
+      - app-network
+
+
+  frontend-server:
+    image: frontend-image
+    build:
+      context: ./Front-End
+    volumes:
+      - ./Front-End:/app
+    networks:
+      - app-network
+    depends_on:
+      - backend-server
+    ports:
+      - "8080:8080"
+
+networks:
+  app-network:
+    driver: bridge
+

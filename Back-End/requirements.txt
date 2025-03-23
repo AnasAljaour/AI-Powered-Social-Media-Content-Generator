@@ -1,0 +1,8 @@
+Flask
+langchain
+langchain_google_genai
+pydub
+speechrecognition
+requests
+google-api-python-client
+google-auth
